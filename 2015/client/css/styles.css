@@ -1,0 +1,560 @@
+/*!
+ *  NREL top navigation styles
+ */
+/**** banner stuff ***/
+.siteheader-wrapper {
+    background-color: #143e68;
+    border-top: 9px solid #f79618;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/*
+ *  GLOBAL TOP NAV
+ ************************************************************/
+
+/*
+<div .navbar-wrapper-global
+    <nav .navbar
+        <div .container
+            <ul .nav .navbar-nav
+                <li .dropdown
+*/
+
+
+/*!
+ *  NREL top navigation styles
+ */
+
+
+/*
+ *  TOP NAV
+ ************************************************************/
+
+/*
+<div .navbar-wrapper [navbar-global]>
+    <div .navbar >
+        <ul .navbar-nav .nav>
+            <li .dropdown>
+                <ul .dropdown-menu>
+                    <li>
+*/
+
+
+/*
+ *  All top nav
+ */
+
+
+.navbar-nav {
+    margin-bottom: 0; /* override */
+    margin-top: 0; /* override */
+    text-transform: uppercase;
+}
+
+/*!
+ *
+ *  Global top nav
+ *
+ *****************************************************************************************************************/
+.navbar-global {
+    background-color: #efefef;
+    text-align: center; /* center top level items */
+}
+
+.navbar-global a {
+    color: #143e68;
+}
+
+
+
+/* squeeze to fix mobile */
+.navbar-global .container {
+    font-size: 12px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width:768px) {
+    /* restore defaults */
+    .navbar-global .container {
+        font-size: 14px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* squeeze to fix mobile */
+.navbar-global .nav > li > a {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+@media (min-width:768px) {
+    /* restore defaults */
+    .navbar-global .nav > li > a {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.navbar-global .navbar {
+    min-height: 0; /* override */
+    margin-bottom: 0; /* override */
+}
+
+.navbar-global  .navbar-nav {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-global  .navbar-nav > li {
+    display: inline-block;
+}
+
+.navbar-global  .navbar-nav > li > a {
+    display: block;
+
+}
+@media(min-width: 992px) {
+    .navbar-global  .navbar-nav > li > a {
+
+
+    }
+}
+
+.navbar-global  .navbar-nav > li > a {
+
+}
+
+.navbar-global  .navbar-nav > li > a:hover,
+.navbar-global  .navbar-nav > li > a:focus {
+
+}
+
+/* active (on) state */
+.navbar-global  .navbar-nav > li.active > a,
+.navbar-global  .navbar-nav > li.active > a:hover  {
+
+
+}
+
+.navbar-global  .navbar-nav > li.open > a {
+    background-color: #ccc;
+}
+.navbar-global  .navbar-nav > li.open .caret {
+
+}
+
+
+/*
+ *  2ND LEVEL
+ */
+.navbar-global  .navbar-nav .open .dropdown-menu {
+    background-color: #efefef;
+}
+
+.navbar-global  .navbar-nav .dropdown-menu > li > a {
+    color: #143E68;
+    display: none !important;
+}
+
+.navbar-global  .navbar-nav .open .dropdown-menu > li > a {
+    display: block !important;
+}
+
+@media(min-width:768px) {
+    /* 2nd level desktop */
+    .navbar-global  .navbar-nav .open .dropdown-menu > li > a {
+
+
+    }
+}
+
+/* 2nd level hover */
+.navbar-global  .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-global  .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-color: #ccc;
+
+}
+
+
+@media (min-width:768px) {
+    .navbar-global  .navbar-nav > li > a {
+
+    }
+}
+
+/* lower levels positioning overrides */
+.navbar-global  .navbar-nav li.dropdown {
+    position: static;
+}
+
+.navbar-global  .navbar-nav .open .dropdown-menu {
+    border-top:0;
+    left: 0;
+    position: absolute;
+    right: auto;
+    width: 100%;
+}
+@media (min-width:768px) {
+    .navbar-global  .navbar-nav .open .dropdown-menu {
+        display:block;
+        left:auto;
+        padding-bottom: 0; /* override */
+        padding-top: 0; /* override */
+        width:auto;
+    }
+}
+
+
+/*!
+ *
+ *  Event top nav
+ *
+ *****************************************************************************************************************/
+
+.navbar-event {
+    background-color: #004990;
+}
+
+.navbar-event a {
+    color: #fff;
+}
+
+.navbar-event .navbar-header {
+    color: #fff;
+    text-align: center;
+}
+
+.navbar-event .navbar {
+    min-height: 0; /* override */
+    margin-bottom: 0; /* override */
+}
+
+.navbar-event .navbar-toggle {
+    float: none; /* override */
+    margin: 0 0 0 15px; /* override */
+    text-transform: uppercase;
+}
+.navbar-event .navbar-toggle .icon-bar-wrapper {
+    display: inline-block;
+}
+.navbar-event .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}
+.navbar-event .navbar-toggle-label {
+    display: inline-block;
+    line-height: 14px;
+    vertical-align: text-top;
+}
+.navbar-event .nav > li > a:focus,
+.navbar-event .nav > li > a:hover {
+    background-color: #143E68;
+}
+
+
+.navbar-event .navbar-nav .open .dropdown-menu {
+    background-color: #000000;
+    padding-bottom: 0; /* override */
+    padding-top: 0; /* override */
+}
+.navbar-event .dropdown-menu > li > a {
+    color: #fff;
+}
+.navbar-event .dropdown-menu > li > a:focus,
+.navbar-event .dropdown-menu > li > a:hover {
+    background-color: #143E68;
+}
+
+
+/*!
+ *  HP Carousel
+ */
+/*
+ * CAROUSEL
+ */
+#carousel {
+    margin-top: 0;
+}
+
+#carousel .headline {
+    font-weight: 300;
+}
+
+
+
+/*
+ *  CAROUSEL
+ *********************************************/
+.col-slides {
+    padding-right: 0;
+}
+.col-thumbs {
+    padding-left:0;
+}
+.col-thumbs .fogbox {
+    margin-bottom:11px;
+}
+.col-thumbs .fogbox:first-child {
+    margin-bottom:8px;
+}
+.col-thumbs  .carousel-indicators {
+    margin-left:0;
+}
+.fogbox > div {
+    border: 0;
+}
+
+.carousel-caption {
+    font-family:Roboto, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* Clearfix the caption b/c of the floats within */
+.carousel-caption:before,
+.carousel-caption:after {
+    content: " ";
+    display: table;
+}
+
+.carousel-caption:after {
+    clear: both;
+}
+
+.carousel-indicators a {
+    cursor: pointer;
+    display: block;
+}
+
+.carousel .headline {
+    font-size: 16px;
+    line-height: 1.2;
+
+}
+
+.carousel p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .carousel .headline {
+        font-size: 18px;
+    }
+    .carousel p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel .headline {
+        font-size: 24px;
+    }
+}
+
+
+#carousel { /* snug to edge on mobile */
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+@media (min-width: 768px) {
+    #carousel {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+}
+
+#carousel a,
+#carousel a:hover {
+    text-decoration: none;
+}
+
+.carousel-caption {
+    background: #000;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding:.5em 1em;
+    text-align: left;
+    left: 0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-caption .headline {
+    color:#fff;
+    font-size:16px;
+    margin:0;
+}
+
+@media (min-width: 768px) {
+    .carousel-caption .headline {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-caption .headline {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel-caption .headline {
+        font-size: 30px;
+    }
+}
+
+
+.carousel-caption .teaser {
+    height:0;
+    line-height: 1.4;
+    margin:0;
+    visibility: hidden;
+}
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        position: absolute;
+    }
+
+    .carousel-caption .teaser {
+        visibility: visible;
+        height: auto;
+    }
+}
+
+
+
+
+.fogbox .overlay {
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    z-index: 2;
+    background: rgba(255,255,255,.7)
+}
+
+.fogbox.active .overlay,
+.fogbox:hover .overlay {
+    z-index: -1;
+}
+
+.carousel-thumbnail-list {
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.fogbox > div { /* override col-* classes */
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    border-top: none;
+    margin:0;
+    padding:0;
+    position: relative;
+}
+
+.carousel-thumbnail-list a {
+    cursor: pointer;
+    display: block;
+}
+
+.carousel-thumbnail-list a:last-child > div {
+  border-right: none;
+}
+
+.carousel-thumbnail-list a:first-child > div {
+  border-left: none;
+}
+
+
+/* overrides */
+.carousel-indicators {
+    position: relative;
+    left: auto;
+    width: auto;
+    bottom: auto;
+}
+
+/* overrides */
+.carousel-indicators .active {
+    background-color: transparent;
+    width: auto;
+    height: auto;
+}
+
+/* CONTROLS (visible on XS only) */
+.carousel-controls {
+    background-color: #000;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height:1;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 0 5px;
+}
+
+.carousel-controls {
+    background-color: #000;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height:1;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 0 5px;
+}
+
+
+.carousel-controls .carousel-previous,
+.carousel-controls .carousel-next  {
+    display: inline-block;
+    background-color: #000;
+    width:49%;
+}
+.carousel-controls .carousel-next {
+    text-align: right;
+}
+
+.carousel-controls .carousel-previous {
+    border-right:1px solid #fff;
+}
+
+.carousel-controls a  {
+    color:#fff;
+    display: block;
+    padding:10px 5px;
+    text-decoration: none;
+}
+
+.carousel-previous   i,
+.carousel-previous   div,
+.carousel-next  i,
+.carousel-next  div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.carousel-controls i.fa {
+    font-size:24px;
+}
+
+/*
+ * FOOTER
+ *********************************************/
+footer {
+    background-color: #efefef;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+footer li {
+    display: inline-block;
+}
