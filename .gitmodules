@@ -1,0 +1,3 @@
+[submodule "client/js/iconomatic"]
+	path = client/js/iconomatic
+	url = https://github.nrel.gov/communications/nrel-iconomatic.git
