@@ -1,6 +1,6 @@
 /**!
  *  moakley
- *  20141101
+ *  20150801
  *  Global actions to take on all solardecathlon.gov pages
  *  Set breadcrumbs
  *  side navigation
@@ -45,7 +45,7 @@ $(document).ready(function(){
      *  TOPNAV
      ******************/
 
-     $('#topnav [data-topnav*=' + pv.topnav + ']').addClass('active')
+     $('.topnav [data-topnav*=' + pv.topnav + ']').addClass('active')
 
 
     /*
@@ -59,7 +59,7 @@ $(document).ready(function(){
 
     // build the 3rd (last) breadcrumb
     if( pv.pagename && pv.breadcrumbs !== false  ) {
-            $( '.breadcrumb' ).append( '<li><span class="bc-pagename">' + pv.pagename + '</span></li>' )
+        $( '.breadcrumb' ).append( '<li><span class="bc-pagename">' + pv.pagename + '</span></li>' )
     }
 
 
@@ -82,8 +82,7 @@ $(document).ready(function(){
     $navlink = $( '.sidenav a[href="' + pv.pageurl + '"]' ) // Find an <a> tag that links to us
 
     if ( pv.sidenavButton ) {
-        // did the developer manually set something?
-        // (maybe our page is a sub-page of something)
+        // did the developer manually set something? (maybe our page is a sub-page of something)
         $navlink = $( '.sidenav a[href$="' + pv.sidenavButton + '"]' )
     } else if ( $navlink.length ) {
         $navlink.removeAttr('href')
@@ -113,36 +112,99 @@ $(document).ready(function(){
 
 })
 
+
 /*
- *  Init sliders
+ *  Teams pages slideshow
+ *  Fetch images from the Flickr API and init two Flexsliders
+ *
  */
-$(document).ready( function(){
+$(document).ready(function(){
 
-    $('.flex-carousel').flexslider({
-        animation: 'slide'
-      , animationLoop: false
-      , asNavFor: '.flex-slider'
-      , controlNav: false
-      , itemMargin: 5
-      , itemWidth: 210
-      , maxItems: 4
-      , minItems: 2
-      , slideshowSpeed:4000
-    })
+    $('.flex-carousel .slides').jflickrrest(
+        {
+            imageSize: 'medium'
+          , qstrings: {
+                api_key: '95b77c681e3659934f3c38485febc19e'
+              , photoset_id: $('.flickr-photoviewer').data('flickrset')
+            }
+          , photoCallback: function(){
+                console.log(this)
+                $(this).children('img').each( function( idx, el  ){
+                    $(el).wrap( '<li />' );
+                })
+            }
 
 
-    $('.flex-slider').flexslider({
-        animation: 'slide'
-      , animationLoop: false
-      , controlNav: false
-      , slideshow: true
-      , slideshowSpeed:4000
-      , smoothHeight: true
-      , sync: '.flex-carousel'
-    })
+        }
+      , function(data){
 
+            $(this).children().clone().appendTo('.flex-slider .slides')
+
+            setTimeout( function(){ // hackery to compensate for flexslider setting viewport to 0 height
+
+                $('.flex-carousel').flexslider({
+                    animation: 'slide'
+                  , animationLoop: false
+                  , asNavFor: '.flex-slider'
+                  , controlNav: false
+                  , itemMargin: 5
+                  , itemWidth: 210
+                  , maxItems: 4
+                  , minItems: 2
+                  , slideshowSpeed:4000
+                })
+
+                $('.flex-slider').flexslider({
+                    animation: 'slide'
+                  , animationLoop: false
+                  , controlNav: false
+                  , slideshow: true
+                  , slideshowSpeed:4000
+                  , smoothHeight: true
+                  , sync: '.flex-carousel'
+                })
+
+            }, 500)
+
+        }
+    )
 })
 
+
+/*
+ * HP Flickr slideshow
+ */
+$(window).ready(function(){
+
+    $('.hp-flex-slider .slides').jflickrrest(
+        {
+            imageSize: 'medium'
+          , qstrings: {
+                api_key: '95b77c681e3659934f3c38485febc19e'
+              , photoset_id: '72157624071391333'
+            }
+          , photoCallback: function(){
+                $('.' + this.className + ' > img').each( function( idx, el  ){
+                    $(el).wrap( '<li></li>' );
+                })
+            }
+        }
+      , function(){
+            setTimeout( function(){ // hackery to compensate for flexslider setting viewport to 0 height
+                $('.hp-flex-slider').flexslider({
+                    animation: 'slide'
+                  , animationLoop: true
+                  , controlNav: false
+                  , slideshow: true
+                  , slideshowSpeed:3500
+                  , smoothHeight: true
+                  , initDelay: 300
+                })
+            }, 500)
+        }
+    )
+
+})
 
 /*
  *  Crazy Egg
