@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Solar Decathlon</title>
-
     <!--#include virtual="/client/template/global-head.html" -->
+    <script>
+        $(function() {
+            window.solard = $.extend( {}, window.solard )
+            window.solard.pagevars = {
+                topnav: 'competition'
+            }
+        })
+    </script>
 </head>
 <body>
 <!--#include virtual="/client/template/global-banner-topnav.html" -->
-<!--#include virtual="/client/template/2015-banner-topnav.html"   -->
+<!--#include virtual="/2015/client/template/2015-banner-topnav.html"   -->
 <!--#include virtual="/client/template/global-breadcrumbs.html" -->
 <div class="container" id="content">
 <div class="row">
@@ -25,7 +31,7 @@
 
         <div class="row">
             <div class="col-sm-8">
-                <h1>Cal Poly: California Polytechnic State University, San Luis Obispo</h1>
+                <h1>Team Sample Page</h1>
             </div>
 
             <div class="col-sm-4">
@@ -74,25 +80,14 @@
 
                 <h2>Photos</h2>
 
-                <div class="flex-carousel flexslider">
-                  <ul class="slides">
-                    <li><img src="/2015/assets/images/test1.jpg"></li>
-                    <li><img src="/2015/assets/images/test2.jpg"></li>
-                    <li><img src="/2015/assets/images/test3.jpg"></li>
-                    <li><img src="/2015/assets/images/test4.jpg"></li>
-                    <li><img src="/2015/assets/images/test5.jpg"></li>
-                  </ul>
+                <div class="flickr-photoviewer" data-flickrset="72157633908312090">
+                    <div class="flexslider flex-carousel">
+                        <ul class="slides"></ul>
+                    </div>
+                    <div class="flexslider flex-slider">
+                        <ul class="slides"></ul>
+                    </div>
                 </div>
-                <div class="flex-slider flexslider">
-                  <ul class="slides">
-                    <li><img src="/2015/assets/images/test1.jpg" class="img-responsive"></li>
-                    <li><img src="/2015/assets/images/test2.jpg" class="img-responsive"></li>
-                    <li><img src="/2015/assets/images/test3.jpg" class="img-responsive"></li>
-                    <li><img src="/2015/assets/images/test4.jpg" class="img-responsive"></li>
-                    <li><img src="/2015/assets/images/test5.jpg" class="img-responsive"></li>
-                  </ul>
-                </div>
-
 
             </div>
         </div>
@@ -125,7 +120,7 @@
     </div> <!--/column -->
 
     <!-- SIDE COLUMN -->
-    <!--#include virtual="/client/template/2015-leftnav.html" -->
+    <!--#include virtual="/2015/client/template/2015-leftnav.html" -->
     <!-- END SIDE COLUMN -->
 
 

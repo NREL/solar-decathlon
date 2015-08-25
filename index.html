@@ -4,14 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title></title>
-
+    <title>Solar Decathlon</title>
     <!--#include virtual="/client/template/global-head.html" -->
 </head>
 <body>
 <!--#include virtual="/client/template/global-banner-topnav.html" -->
-<!--#include virtual="/client/template/2015-banner-topnav.html"   -->
+<!--#include virtual="/2015/client/template/2015-banner-topnav.html"   -->
 <div class="container" id="content">
 <div class="row">
 <!-- BEGIN CONTENT -->
@@ -22,11 +20,11 @@
 
 
         <!-- NARROW CAROUSEL -->
-        <!--#include virtual="/client/template/hp-carousel-narrow.html"  -->
+        <!-- #include virtual="/client/template/hp-carousel-narrow.html"  -->
         <!-- END CAROUSEL -->
 
         <!-- SCORES AND STANDINGS -->
-        <!--#include virtual="/client/template/hp-scores-widget.html" -->
+        <!-- #include virtual="/client/template/hp-scores-widget.html" -->
         <!-- END SCORES AND STANDINGS -->
 
 </div><!-- /row -->
@@ -39,17 +37,24 @@
 
         <p class="intro">The U.S. Department of Energy Solar Decathlon challenges collegiate teams to design, build, and operate solar-powered houses that are cost-effective, energy-efficient, and attractive. The winner of the competition is the team that best blends affordability, consumer appeal, and design excellence with optimal energy production and maximum efficiency.</p>
 
+        <!-- LATEST PHOTOS -->
         <div class="col-sm-6">
-            <div class="panel panel-flat">
+            <div class="panel panel-flat latest-photos">
                 <div class="panel-heading">Latest Photos</div>
-                    <img src="https://placekitten.com/g/343/190"
-                        class="img-responsive">
+
+                <div class="hp-flex-slider flexslider">
+                    <ul class="slides"></ul>
+                </div>
+
             </div>
         </div>
+
+        <!-- LATEST VIDEOS -->
         <div class="col-sm-6">
-            <div class="panel panel-flat">
+            <div class="panel panel-flat latest-videos">
                 <div class="panel-heading">Latest Videos</div>
                 <div class="panel-body embed-responsive embed-responsive-16by9">
+
                   <iframe
                       class="embed-responsive-item"
                       src="//www.youtube.com/embed/videoseries?list=PLCC37B13B68FF5930" allowfullscreen>
@@ -57,51 +62,52 @@
 
                 </div>
             </div>
-
         </div>
+
     </div>
 
+    <!-- LATEST NEWS -->
     <div class="col-sm-4">
+        <div class="latest-news">
 
-        <h2>Latest News <i class="fa fa-rss-square"></i></h2>
+            <h2>Latest News <i class="fa fa-rss-square"></i></h2>
 
-        <div class="feed-container">
+            <div class="feed-container">
 
-            <div class="media">
-                <a href="#" class="link-block">
-                    <div class="media-body">
-                        <h4 class="media-heading">Team Orange County Sprouts Casa del Sol on Its Home Turf</h4>
-                        <h5 class="date">August 10, 2015</h5>
-                        <p>The U.S. Department of Energy Solar Decathlon 2015’s Team Orange County—comprising the University of California, Irvine; ... More <i class="fa fa-chevron-circle-right"></i></p>
-                    </div>
-                </a>
-            </div>
+                <div class="media">
+                    <a href="#" class="link-block">
+                        <div class="media-body">
+                            <h4 class="media-heading">Team Orange County Sprouts Casa del Sol on Its Home Turf</h4>
+                            <h5 class="date">August 10, 2015</h5>
+                            <p>The U.S. Department of Energy Solar Decathlon 2015’s Team Orange County—comprising the University of California, Irvine; ... More <i class="fa fa-chevron-circle-right"></i></p>
+                        </div>
+                    </a>
+                </div>
 
-            <div class="media">
-                <a href="#" class="link-block">
-                    <div class="media-body">
-                        <h4 class="media-heading">Team Orange County Sprouts Casa del Sol on Its Home Turf</h4>
-                        <h5 class="date">August 10, 2015</h5>
-                        <p>The U.S. Department of Energy Solar Decathlon 2015’s Team Orange County—comprising the University of California, Irvine; ... More <i class="fa fa-chevron-circle-right"></i></p>
-                    </div>
-                </a>
-            </div>
+                <div class="media">
+                    <a href="#" class="link-block">
+                        <div class="media-body">
+                            <h4 class="media-heading">Team Orange County Sprouts Casa del Sol on Its Home Turf</h4>
+                            <h5 class="date">August 10, 2015</h5>
+                            <p>The U.S. Department of Energy Solar Decathlon 2015’s Team Orange County—comprising the University of California, Irvine; ... More <i class="fa fa-chevron-circle-right"></i></p>
+                        </div>
+                    </a>
+                </div>
 
-            <div class="media">
-                <a href="#" class="link-block">
-                    <div class="media-body">
-                        <h4 class="media-heading">Team Orange County Sprouts Casa del Sol on Its Home Turf</h4>
-                        <h5 class="date">August 10, 2015</h5>
-                        <p>The U.S. Department of Energy Solar Decathlon 2015’s Team Orange County—comprising the University of California, Irvine; ... More <i class="fa fa-chevron-circle-right"></i></p>
-                    </div>
-                </a>
+                <div class="media">
+                    <a href="#" class="link-block">
+                        <div class="media-body">
+                            <h4 class="media-heading">Team Orange County Sprouts Casa del Sol on Its Home Turf</h4>
+                            <h5 class="date">August 10, 2015</h5>
+                            <p>The U.S. Department of Energy Solar Decathlon 2015’s Team Orange County—comprising the University of California, Irvine; ... More <i class="fa fa-chevron-circle-right"></i></p>
+                        </div>
+                    </a>
+                </div>
+
             </div>
 
         </div>
-
     </div>
-
-</div>
 
 
 
