@@ -1,3 +1,6 @@
 [submodule "client/js/iconomatic"]
 	path = client/js/iconomatic
 	url = https://github.nrel.gov/communications/nrel-iconomatic.git
+[submodule "client/js/jflickrrest"]
+	path = client/js/jflickrrest
+	url = https://github.nrel.gov/communications/jflickrrest
