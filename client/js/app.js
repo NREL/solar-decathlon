@@ -83,15 +83,16 @@ $(document).ready(function(){
 
     if ( pv.sidenavButton ) {
         // did the developer manually set something? (maybe our page is a sub-page of something)
-        $navlink = $( '.sidenav a[href$="' + pv.sidenavButton + '"]' )
-    } else if ( $navlink.length ) {
-        $navlink.removeAttr('href')
+        $navlink = $( '.sidenav a[href="' + pv.siteurl + pv.sidenavButton + '"]' )
+
     } else {
-        $('.sidenav > .nav').removeClass('hide')
+
+        $navlink.removeAttr('href')
+
     }
 
     $navitem = $navlink.parent() // grab the <li>
-    $navitem.addClass('active') // Activate the button
+    $navitem.addClass('active') // activate the button
     $navitem.children('.nav').removeClass('hide') // show any immediate downstream menus
     $navitem.parentsUntil('.sidenav', '.hide').removeClass('hide') // show any hidden menus upstream as needed
 
