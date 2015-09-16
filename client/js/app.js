@@ -20,26 +20,31 @@ $(document).ready(function(){
       , slash
       , solard
       , pv
+      , isHomePage = false
+      //, homepages = ['/','index.html','index.cfm','index.php']
 
     // shorthand alias for our page variables
-    solard = window.solard || {}
-    pv = solard.pagevars || {}
+    solard = window.solard || {};
+    pv = solard.pagevars || {};
 
 
 
 
-    pv.pagename = $('h1').text()
+    pv.pagename = $('h1').text();
 
-    slash = location.pathname.lastIndexOf('/') + 1
+    slash = location.pathname.lastIndexOf('/') + 1;
 
-    if(pv.pageurl === undefined) {
-        pv.pageurl  = location.pathname                 //  /foo/bar/baz/boink.html
+    if (pv.pageurl === undefined) {
+        pv.pageurl  = location.pathname;                 //  /foo/bar/baz/boink.html or /foo/ if foo home page
     }
 
-    if(pv.siteurl === undefined) {
-        pv.siteurl  = location.pathname.substr(0,slash) //  /foo/bar/baz/
+    if (pv.siteurl === undefined) {
+        pv.siteurl  = location.pathname.substr(0,slash); //  /foo/bar/baz/
     }
 
+    if ( pv.pageurl === pv.siteurl || pv.pageurl.match(/index\./) ) {
+        isHomePage = true
+    }
 
     /*
      *  TOPNAV
@@ -69,33 +74,45 @@ $(document).ready(function(){
     }
 
 
+
     /*
      * LEFTNAV
      ******************/
 
     /*
+     * Home pages aren't in the nav. Just show the top level and be done.
+     *
      * If the developer set something manually, respect that first.
-     * Otherwise, if the filename was found in a leftnav hyperlink, unlink it,
-     * or lastly just assume top level and show all.
+     * Otherwise, if the filename was found in a leftnav hyperlink, unlink it.
+     *
      */
 
     $navlink = $( '.sidenav a[href="' + pv.pageurl + '"]' ) // Find an <a> tag that links to us
 
-    if ( pv.sidenavButton ) {
-        // did the developer manually set something? (maybe our page is a sub-page of something)
-        $navlink = $( '.sidenav a[href="' + pv.siteurl + pv.sidenavButton + '"]' )
+    // is this a home page...
+    if ( isHomePage) {
+
+        $('.sidenav').children('.nav').removeClass('hide')
 
     } else {
 
-        $navlink.removeAttr('href')
+        // did the developer manually set something?
+        if ( pv.sidenavButton ) {
+            // maybe our page is a sub-page of something
+            $navlink = $( '.sidenav a[href="' + pv.siteurl + pv.sidenavButton + '"]' )
+
+        } else {
+
+            $navlink.removeAttr('href')
+
+        }
+
+        $navitem = $navlink.parent() // grab the <li>
+        $navitem.addClass('active') // Activate the button
+        $navitem.children('.nav').removeClass('hide') // show any immediate downstream menus
+        $navitem.parentsUntil('.sidenav', '.hide').removeClass('hide') // show any hidden menus upstream as needed
 
     }
-
-    $navitem = $navlink.parent() // grab the <li>
-    $navitem.addClass('active') // activate the button
-    $navitem.children('.nav').removeClass('hide') // show any immediate downstream menus
-    $navitem.parentsUntil('.sidenav', '.hide').removeClass('hide') // show any hidden menus upstream as needed
-
 })
 
 

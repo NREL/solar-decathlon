@@ -35,7 +35,10 @@ h6,
 .panel-heading {
     font-family: 'Lato', sans-serif;
 }
-
+.subhead {
+    margin-top:0;
+    margin-bottom:12px;
+}
 h1 {
     color: #1b5fa6;
     font-weight: 300;
@@ -52,16 +55,29 @@ h2 {
 }
 
 h3 {
+    font-size: 20px;
+    color: #0079C2;
     font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 4px;
 }
 
 h4 {
-    font-size: 1.3em;
+    font-size: 20px;
     color: #0079C2;
     font-weight: 500;
     margin-top: 20px;
     margin-bottom: 4px;
 }
+
+h2 .fa,
+h3 .fa,
+h4 .fa,
+h5 .fa,
+h6 .fa {
+    font-size: 80%;
+}
+
 
 .lead {
     font-family: 'Lato', sans-serif;
@@ -88,7 +104,31 @@ h4 {
 h2 > a,
 h2 > a:visited  {
     color:#e07700;
+    text-decoration: none;
 }
+h2 > a:hover {
+    text-decoration: none;
+}
+
+h3 > a,
+h3 > a:visited  {
+    color:#0079C2;
+    text-decoration: none;
+}
+h3 > a:hover {
+    text-decoration: none;
+}
+
+
+h4 > a,
+h4 > a:visited {
+    color: #0079C2;
+    text-decoration: none;
+}
+h4 > a:hover {
+    text-decoration: none;
+}
+
 
 .primary-darkblue-text {
     color: #143e68;
@@ -625,6 +665,14 @@ h2 > a:visited  {
         margin: 0 0 24px 0;
     }
 }
+
+img.pull-right {
+    margin-left:7px;
+}
+
+img.pull-left {
+    margin-right:7px;
+}
 /*
  * HP Specific
  *********************************************/
@@ -894,7 +942,6 @@ h2 > a:visited  {
  *********************************************/
 .panel-heading {
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .panel-flat {
@@ -938,7 +985,16 @@ a.link-block {
 }
 
 a.link-block:hover {
+    color: inherit;
     text-decoration: none;
+}
+
+a.link-block:hover h2 {
+    color: #e07700;
+}
+
+a.link-block:hover h4 {
+    color: #e07700;
 }
 
 
@@ -951,47 +1007,121 @@ a.link-block:hover {
     margin-top: 2em;
     margin-bottom: 1em;
 }
-
 .media-block:before,
 .media-block:after {
     content: " ";
     display: table;
 }
-
 .media-block:after {
-    clear: both;
+    clear:both;
 }
-
 /* horizontal media block */
+.media-block   .header,
 .media-block h2.header,
 .media-block h3.header,
-.media-block h4.header {
+.media-block h4.header,
+.media-block h5.header,
+.media-block h6.header {
     margin-top:0;
 }
-
 /* vertical media block */
-.media-block img + h2,
-.media-block img + h3,
-.media-block img + h4,
-.media-block img + .header {
-    margin-top:.5em;
+.media-block img +   .header,
+.media-block img + h2.header,
+.media-block img + h3.header,
+.media-block img + h4.header {
+    margin-top:1em;
 }
 
 /* read more, learn more, ..typically the critical action oriented links in a media block */
 .media-block .more {
-    font-family: 'Lato', sans-serif;
+    font-family:Roboto, "Helvetica Neue", Helvetica, sans-serif;
 }
-
 .media-block .more a {
     text-decoration: none;
-
 }
-
 .media-block .more a:hover {
     text-decoration: underline;
-
 }
 
+/*
+    For vertical alignment
+
+    Rows of media blocks, one per row. (typically img on left, text on right)
+    eg
+    <div class="media-block media-block-center">
+        <div class="row">
+            <div class="col-sm-3">
+                <a ...><img class="img-responsive"...></a>
+            </div>
+            <div class="col-sm-9">
+                <h4 class="header"><a ...>Headline <i class="fa fa-chevron-circle-right"></i></a></h4>
+            </div>
+        </div>
+    </div>
+
+*/
+
+@media(min-width: 768px) {
+    .media-block-center .row {
+        display: table;
+        height: 100%;
+    }
+    .media-block-center [class*="col-"] {
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+    }
+}
+
+/*
+ *  TABLES
+ *********************************************/
+.table-yr2011 th,
+.table-yr2011 td {
+    width: 33%;
+}
+
+.table-yr2009 th,
+.table-yr2009 td {
+    width: 33%;
+}
+
+.table-yr2007 th,
+.table-yr2007 td {
+    width: 33%;
+}
+
+.table-yr2005 th,
+.table-yr2005 td {
+    width: 33%;
+}
+
+.table-yr2002 th,
+.table-yr2002 td {
+    width: 33%;
+}
+
+
+
+.table-yr2011 > thead > tr > th {
+    border-bottom: 2px solid #e14f9e;
+}
+
+.table-yr2009 > thead > tr > th {
+    border-bottom: 2px solid #fd7567;
+}
+
+.table-yr2007 > thead > tr > th {
+    border-bottom: 2px solid #6991fd;
+}
+
+.table-yr2005 > thead > tr > th {
+    border-bottom: 2px solid #00e64d;
+}
+
+.table-yr2002 > thead > tr > th {
+    border-bottom: 2px solid #fdf569;
+}
 /*
  * LINKS
  *********************************************/
@@ -1011,6 +1141,9 @@ a:active {
   text-decoration: underline;
 }
 
+a.btn {
+    text-decoration: none
+}
 /*
  * LATEST STUFF
  *********************************************/
@@ -1159,6 +1292,11 @@ hr {
     margin-bottom: 10px;
     border: 0;
     border-top: 2px solid #ccc;
+}
+
+
+.fileIcon {
+    margin-left: 3px;
 }
 
 /*

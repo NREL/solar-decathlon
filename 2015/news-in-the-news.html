@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solar Decathlon: Solar Decathlon in the News</title>
+    <!--#include virtual="/client/template/global-head.html" -->
+    <script>
+        $(function() { window.solard = { pagevars: { topnav: 'news' } } })
+    </script>
+</head>
+<body>
+<!--#include virtual="/client/template/global-banner-topnav.html" -->
+<!--#include virtual="/2015/client/template/2015-banner-topnav.html" -->
+<!--#include virtual="/client/template/global-breadcrumbs.html" -->
+<div class="container" id="content">
+<div class="row">
+
+    <!-- BEGIN CONTENT -->
+    <div class="col-sm-9 col-sm-push-3">
+
+
+        <div class="image-hero">
+            <img src="assets/images/news-in-the-news.jpg" alt="" class="img-responsive">
+        </div>
+
+<h1>Solar Decathlon in the News</h1>
+
+<p>Read what the media is saying about the U.S. Department of Energy Solar Decathlon. The articles below are the latest news stories written about the decathlon and its teams.</p>
+
+<!-- container for dynamic content -->
+<div id="news">
+    <p class="ajax-loading-msg"><img src="/images/ajax-loader.gif" alt=""> Loading latest news...</p>
+</div>
+
+<!-- Include plugin -->
+<script src="/client/js/rss/jquery.rss.min.js"></script>
+
+<!-- Custom init code-->
+<script src="/client/js/jquery.inthenews.js"></script>
+
+
+
+<p>Solar Decathlon in the News is provided courtesy of <a href="http://news.google.com/news/search?aq=f&amp;pz=1&amp;cf=all&amp;ned=us&amp;hl=en&amp;q=Solar+Decathlon">Google News</a> using the search term &quot;solar decathlon.&quot;</p>
+
+
+    </div> <!--/column -->
+    <!-- END CONTENT -->
+
+    <!-- SIDE COLUMN -->
+    <!--#include virtual="/2015/client/template/2015-leftnav.html" -->
+    <!-- END SIDE COLUMN -->
+
+</div><!-- /row -->
+</div> <!-- /container#content -->
+<!--#include virtual="/client/template/global-footer.html"  -->
+<!--#include virtual="/client/template/global-scripts.html" -->
+</body>
+</html>
