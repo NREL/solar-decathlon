@@ -42,7 +42,7 @@ $(document).ready(function(){
         pv.siteurl  = location.pathname.substr(0,slash); //  /foo/bar/baz/
     }
 
-    if ( pv.pageurl === pv.siteurl || pv.pageurl.match(/index\./) ) {
+    if ( pv.pageurl === pv.siteurl || pv.pageurl.match(/index\./) || pv.pageurl.match(/\/$/) ) {
         isHomePage = true
     }
 
@@ -75,44 +75,68 @@ $(document).ready(function(){
 
 
 
+
+
     /*
      * LEFTNAV
      ******************/
 
     /*
-     * Home pages aren't in the nav. Just show the top level and be done.
+     * Home pages aren't in the nav. Show the top level.
      *
-     * If the developer set something manually, respect that first.
-     * Otherwise, if the filename was found in a leftnav hyperlink, unlink it.
+     * If the developer set `sidenav`, show the menu.
+     * (this is usually the case for landing pages that aren't listed in the nav)
+     *
+     * If the developer set `sidenavButton` manually, respect that.
+     * (this is usually the case for sub buttons that aren't listed in the nav)
+     *
+     * If the filename was found in a leftnav hyperlink, unlink it and show the upstream menus.
      *
      */
 
-    $navlink = $( '.sidenav a[href="' + pv.pageurl + '"]' ) // Find an <a> tag that links to us
 
-    // is this a home page...
     if ( isHomePage) {
 
         $('.sidenav').children('.nav').removeClass('hide')
 
-    } else {
+    }
 
-        // did the developer manually set something?
-        if ( pv.sidenavButton ) {
-            // maybe our page is a sub-page of something
-            $navlink = $( '.sidenav a[href="' + pv.siteurl + pv.sidenavButton + '"]' )
+    if ( pv.sidenav ) {
 
-        } else {
-
-            $navlink.removeAttr('href')
-
-        }
-
-        $navitem = $navlink.parent() // grab the <li>
-        $navitem.addClass('active') // Activate the button
-        $navitem.children('.nav').removeClass('hide') // show any immediate downstream menus
-        $navitem.parentsUntil('.sidenav', '.hide').removeClass('hide') // show any hidden menus upstream as needed
+        $('.sidenav [data-sidenav=' + pv.sidenav + ']').removeClass('hide')
 
     }
+
+
+    $navlink = $( '.sidenav a[href="' + pv.pageurl + '"]' ) // Find an <a> tag that links to us
+
+    if ( pv.sidenavButton ) {
+
+        // Accept sidenavButton vals like /mysite/mypage.html and mypage.html
+        // If it's just mypage.html, prepend the siteurl
+        pv.sidenavButton = pv.sidenavButton.substr(0) !== '/'
+          ? pv.siteurl + pv.sidenavButton
+          : pv.sidenavButton
+
+
+        $navlink = $( '.sidenav a[href="' + pv.sidenavButton + '"]' )
+
+    } else {
+
+        $navlink.removeAttr('href')
+
+    }
+
+    $navitem = $navlink.parent() // grab the <li>
+    $navitem.addClass('active') // Activate the button
+    $navitem.children('.nav').removeClass('hide') // show any immediate downstream menus
+    $navitem.parentsUntil('.sidenav', '.hide').removeClass('hide') // show any hidden menus upstream as needed
+
+
+
+
+
+
 })
 
 
