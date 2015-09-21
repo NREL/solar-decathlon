@@ -6,15 +6,32 @@
     <div class="container">
 
         <div class="pull-left">
+            <!-- LOGO -->
             <a href="/"><img src="/client/img/head-sd-logo.gif" class="img-responsive"></a>
         </div>
 
         <div class="pull-right">
-            <form action="" class="form form-inline form-search">
-            <input type="text" placeholder="Search solardecathlon.gov" class="form-control">
-            <input type="submit" class="btn btn-primary" value="Search">
+            <!-- Search -->
+            <form name="seek" method="get" action="http://search.nrel.gov/query.html" class="form form-inline form-search">
+            <input type="hidden" name="qp" value="site:www.solardecathlon.gov" />
+            <input type="hidden" name="style" value="solard" />
+            <input type="hidden" name="qs" value="" />
+            <input type="hidden" name="qc" value="eren" />
+            <input type="hidden" name="ws" value="0" />
+            <input type="hidden" name="qm" value="0" />
+            <input type="hidden" name="st" value="1" />
+            <input type="hidden" name="nh" value="10" />
+            <input type="hidden" name="lk" value="1" />
+            <input type="hidden" name="rf" value="0" />
+            <input type="hidden" name="oq" value="" />
+            <input type="hidden" name="col" value="eren" />
+
+            <input name="qt" maxlength="2047" id="search" type="text" placeholder="Search solardecathlon.gov" class="form-control" />
+            <label for="search" class="sr-only">Search</label>
+            <input  value="Search" alt="Search" class="btn btn-primary" type="submit" />
             </form>
 
+            <!-- Social Media -->
             <ul class="list-social">
             <li><a href="https://www.facebook.com/DOESolarDecathlon"><img src="/client/img/icon-facebook-20x20.png" alt="Facebook"></a></li>
             <li><a href="https://twitter.com/solar_decathlon/"><img src="/client/img/icon-twitter-20x20.png" alt="Twitter"></a></li>
