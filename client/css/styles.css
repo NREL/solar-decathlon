@@ -1145,7 +1145,7 @@ a.btn {
     text-decoration: none
 }
 /*
- * LATEST STUFF
+ * 'LATEST' STUFF
  *********************************************/
 
 .feed-container {
@@ -1281,6 +1281,12 @@ button,
     .form-search .btn {
         width: auto;
     }
+}
+/*
+ * Utilities
+ *********************************************/
+.no-float {
+    float: none;
 }
 
 /*
