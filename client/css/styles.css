@@ -708,7 +708,9 @@ img.pull-left {
     padding-left:0;
 }
 .col-thumbs .fogbox {
+    margin-bottom: 5.5px;
 }
+
 .col-thumbs .fogbox:first-child {
 }
 .col-thumbs  .carousel-indicators {
