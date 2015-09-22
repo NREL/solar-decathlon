@@ -1146,34 +1146,44 @@ a:active {
 a.btn {
     text-decoration: none
 }
+
 /*
  * 'LATEST' STUFF
  *********************************************/
 
-.feed-container {
+.hp-blog-container {
     border-bottom:1px solid #143e68;
     border-top:1px solid #143e68;
     margin-bottom: 1em;
     padding: .5em 0;
 }
 
-.feed-container .media-heading {
+.hp-blog-container .media-heading {
     color: #1b5fa6;
     font-size:16px;
 }
 
-.feed-container .date {
+.hp-blog-container .date {
     color: #5b5b5b;
 }
 
-.feed-container .media {
+.hp-blog-container .media {
     border-bottom:1px dotted #ccc;
 }
 
-.feed-container .media:last-child {
+.hp-blog-container .media:last-child {
     border-bottom: none;
 }
 
+.hp-blog-container a:visited {
+    color: inherit;
+}
+.feed-container .title,
+.feed-container h2 + h3,
+.feed-container h3 + h4 {
+    margin-top: 0;
+    margin-bottom: .25em;
+}
 /*
  *  Form Elements
  *********************************************/
@@ -1375,4 +1385,3 @@ footer li {
     opacity: 1;
     cursor: default;
 }
-
