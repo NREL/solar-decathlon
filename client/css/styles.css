@@ -143,6 +143,31 @@ h4 > a:hover {
 }
 
 /*!
+ *  EMOJIOGRAPHY
+ ************************************************************/
+.👻 {
+    font-size: 6px;
+}
+
+.💨 {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(2, start);
+}
+@keyframes blink {
+    80% {
+        visibility: hidden;
+    }
+}
+
+.🐝 {
+    color: yellow;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*!
  *  BANNER
  ************************************************************/
 .logo-wrapper .pull-left,
