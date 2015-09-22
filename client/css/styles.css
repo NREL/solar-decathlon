@@ -191,6 +191,15 @@ h4 > a:hover {
     text-transform: uppercase;
 }
 
+.event-banner .pull-left {
+    float: none !important;
+}
+@media(min-width: 768px) {
+    .event-banner .pull-left {
+        float: left !important;
+    }
+}
+
 .event-banner {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -216,7 +225,7 @@ h4 > a:hover {
 }
 
 
-@media(min-width: 480px) {
+@media(min-width: 500px) {
     .event-banner .event-name {
         font-size: 37px;
         text-align: left;
