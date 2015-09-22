@@ -154,64 +154,48 @@ $(document).ready(function(){
 
 })
 
-
-/*
- *  Teams pages slideshow
- *  Fetch images from the Flickr API and init two Flexsliders
- *
+/**
+ * HP Latest News RSS feed
  */
-$(document).ready(function(){
-
-    $('.flex-carousel .slides').jflickrrest(
-        {
-            imageSize: 'medium'
-          , qstrings: {
-                api_key: '95b77c681e3659934f3c38485febc19e'
-              , photoset_id: $('.flickr-photoviewer').data('flickrset')
-            }
-          , photoCallback: function(){
-                console.log(this)
-                $(this).children('img').each( function( idx, el  ){
-                    $(el).wrap( '<li />' );
-                })
-            }
 
 
+
+ $(document).ready(function(e) {
+
+  $('.latest-news-feed').rss('http://www.solardecathlon.gov/blog/feed',
+    {
+      limit: 3,
+      outputMode: 'json_xml', // valid values: 'json', 'json_xml'
+      layoutTemplate: '<div class="hp-blog-container">{entries}</div>',
+      entryTemplate: ''+
+                '<div class="media">'+
+                '    <a href="{url}" class="link-block">'+
+                '        <div class="media-body">'+
+                '            <h4 class="media-heading">{title}</h4>'+
+                '            <h5 class="date">{prettydate}</h5>'+
+                '            <p>{shortBodyPlain} More <i class="fa fa-chevron-circle-right"></i></p>'+
+                '        </div>'+
+                '    </a>'+
+                '</div>',
+
+      tokens: {
+        prettydate: function(entry, tokens){
+
+          var uglydate = new Date(entry.publishedDate);
+          var monthArray = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+          var d = uglydate.getDate();
+          var m = monthArray[ uglydate.getMonth() ];
+          var y = uglydate.getFullYear();
+
+          return m +' '+ d + ', ' + y;
         }
-      , function(data){
+      },
+                success: function(){ $('.ajax-loading-msg').fadeOut('slow'); }
 
-            $(this).children().clone().appendTo('.flex-slider .slides')
-
-            setTimeout( function(){ // hackery to compensate for flexslider setting viewport to 0 height
-
-                $('.flex-carousel').flexslider({
-                    animation: 'slide'
-                  , animationLoop: false
-                  , asNavFor: '.flex-slider'
-                  , controlNav: false
-                  , itemMargin: 5
-                  , itemWidth: 210
-                  , maxItems: 4
-                  , minItems: 2
-                  , slideshowSpeed:4000
-                })
-
-                $('.flex-slider').flexslider({
-                    animation: 'slide'
-                  , animationLoop: false
-                  , controlNav: false
-                  , slideshow: true
-                  , slideshowSpeed:4000
-                  , smoothHeight: true
-                  , sync: '.flex-carousel'
-                })
-
-            }, 500)
-
-        }
-    )
+    }
+  );
 })
-
 
 /*
  * HP Flickr slideshow
